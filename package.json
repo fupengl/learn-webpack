@@ -1,0 +1,39 @@
+{
+  "name": "learn-webpack",
+  "version": "1.0.0",
+  "description": "lean webpack",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "static": "cd examples && python -m SimpleHTTPServer 8000",
+    "example": "cd examples && node build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fupengl/learn-webpack.git"
+  },
+  "keywords": [
+    "webpack"
+  ],
+  "author": "fupengl",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fupengl/learn-webpack/issues"
+  },
+  "homepage": "https://github.com/fupengl/learn-webpack#readme",
+  "devDependencies": {
+    "eslint": "^5.10.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "prettier": "^1.15.3"
+  },
+  "dependencies": {
+    "neo-async": "^2.6.0",
+    "webpack": "^4.27.1",
+    "webpack-cli": "^3.1.2"
+  }
+}
