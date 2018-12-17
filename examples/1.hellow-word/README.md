@@ -16,21 +16,18 @@ module.exports = "Hello, World!";
 # webpack.config.js
 
 ``` javascript
-var path = require("path");
-
 module.exports = {
   // mode: "development" || "production",
   entry: "./src",
   output: {
-    path: path.join(__dirname, "dist"),
     filename: "bundle.js"
   }
 };
 ```
 
-[`entry`](https://webpack.js.org/concepts/#entry)它设置应用程序的入口点。用于指示webpack在哪里是您的应用程序以及需要解决哪些模块的起始文件。Webpack在指定的路径中查找。默认情况下，如果您未指定文件扩展名，Webpack将采用文件扩展名.js（JavaScript）。Webpack默认加载JavaScript。
+[`entry`](https://webpack.js.org/configuration/entry-context/#entry) 它设置应用程序的入口点。用于指示webpack在哪里是您的应用程序以及需要解决哪些模块的起始文件。Webpack在指定的路径中查找。默认情况下，如果您未指定文件扩展名，Webpack将采用文件扩展名.js（JavaScript）。Webpack默认加载JavaScript。
 
-[`output`](https://webpack.js.org/concepts/#output)用于设置捆绑包的文件名。filename是唯一必需的设置。
+[`output`](https://webpack.js.org/configuration/output/#output-filename) 用于设置捆绑包的文件名。filename是唯一必需的设置。
 
 # Info
 
