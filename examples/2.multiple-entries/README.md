@@ -31,7 +31,7 @@ module.exports = {
   // mode: "development" || "production",
   context: path.join(__dirname, "src"),
   entry: {
-    index: "./index",
+    index: ".",
     user: ["./user", "./account"]
   },
   output: {
@@ -56,9 +56,9 @@ index.js  3.75 KiB       0  [emitted]  index
 Entrypoint index = index.js
 Entrypoint user = user.js
 chunk    {0} index.js (index) 74 bytes [entry] [rendered]
-    > ./index index
+    > . index
  [0] ./index.js 74 bytes {0} [built]
-     single entry ./index  index
+     single entry .  index
 chunk    {1} user.js (user) 189 bytes [entry] [rendered]
     > user
  [1] multi ./user ./account 40 bytes {1} [built]
@@ -80,9 +80,9 @@ index.js  994 bytes       0  [emitted]  index
 Entrypoint index = index.js
 Entrypoint user = user.js
 chunk    {0} index.js (index) 74 bytes [entry] [rendered]
-    > ./index index
+    > . index
  [0] ./index.js 74 bytes {0} [built]
-     single entry ./index  index
+     single entry .  index
 chunk    {1} user.js (user) 189 bytes [entry] [rendered]
     > user
  [1] multi ./user ./account 40 bytes {1} [built]

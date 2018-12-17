@@ -1,47 +1,82 @@
 # index.js
 
 ``` javascript
-module.exports = function() {
-  console.log("This is the index page");
-};
-```
+import './index.scss'
 
-# account.js
+require('../../../assets/webpack.png')
 
-``` javascript
-module.exports = function() {
-  console.log("This is the account page");
-};
-```
+export default class HelloWorld {
+  constructor() {
+  }
 
-# user.js
+  test() {
+    const element = window.document.createElement("h3");
+    element.innerHTML = 'hello word';
+    element.className = 'index'
+    window.document.body.appendChild(element);
+  }
 
-``` javascript
-module.exports = function() {
-  console.log("This is the user page");
-};
+  static say(){
+    console.log('hello word\n')
+  }
+}
+
+const helloWorld = new HelloWorld()
+
+helloWorld.test();
+
+HelloWorld.say();
 ```
 
 # webpack.config.js
 
 ``` javascript
-var path = require("path");
-
 module.exports = {
   // mode: "development" || "production",
-  context: path.join(__dirname, "src"),
-  entry: {
-    index: "./index",
-    user: ["./user", "./account"]
-  },
+  context: __dirname + "/src",
+  entry: ".",
   output: {
-    path: path.join(__dirname, "dist"),
     filename: "[name].js"
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        use: [
+          {
+            loader: "babel-loader"
+          }
+        ]
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          {
+            loader: "style-loader" // creates style nodes from JS strings
+          },
+          {
+            loader: "css-loader" // translates CSS into CommonJS
+          },
+          {
+            loader: "sass-loader" // compiles Sass to CSS
+          }
+        ]
+      },
+      {
+        test: /\.(png|gif|jpeg|jpg)\??.*$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: `[name].[ext]`
+            }
+          }
+        ]
+      }
+    ]
   }
 };
 ```
-
-[`context`](https://webpack.js.org/configuration/entry-context/#context) 基本目录，一个绝对路径，用于从配置中解析入口点和加载器。
 
 # Info
 
@@ -50,23 +85,22 @@ module.exports = {
 ```
 Hash: 0a1b2c3d4e5f6a7b8c9d
 Version: webpack 4.27.1
-   Asset      Size  Chunks             Chunk Names
-index.js  3.75 KiB       0  [emitted]  index
- user.js  4.29 KiB       1  [emitted]  user
-Entrypoint index = index.js
-Entrypoint user = user.js
-chunk    {0} index.js (index) 74 bytes [entry] [rendered]
-    > ./index index
- [0] ./index.js 74 bytes {0} [built]
-     single entry ./index  index
-chunk    {1} user.js (user) 189 bytes [entry] [rendered]
-    > user
- [1] multi ./user ./account 40 bytes {1} [built]
-     multi entry 
- [2] ./user.js 73 bytes {1} [built]
-     single entry ./user [1] multi ./user ./account user[0]
- [3] ./account.js 76 bytes {1} [built]
-     single entry ./account [1] multi ./user ./account user[1]
+      Asset      Size  Chunks             Chunk Names
+    main.js  23.3 KiB       0  [emitted]  main
+webpack.png   145 KiB          [emitted]  
+Entrypoint main = main.js
+chunk    {0} main.js (main) 17.6 KiB [entry] [rendered]
+    > . main
+ [0] ./index.js 440 bytes {0} [built]
+     [exports: default]
+     single entry .  main
+ [1] ./index.scss 1.22 KiB {0} [built]
+     harmony side effect evaluation ./index.scss [0] ./index.js 1:0-22
+ [2] (webpack)/node_modules/css-loader/dist/cjs.js!(webpack)/node_modules/sass-loader/lib/loader.js!./index.scss 403 bytes {0} [built]
+     cjs require !!../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/lib/loader.js!./index.scss [1] ./index.scss 2:14-132
+ [6] (webpack)/assets/webpack.png 57 bytes {0} [built]
+     cjs require ../../../assets/webpack.png [0] ./index.js 3:0-38
+     + 3 hidden modules
 ```
 
 ## Production mode
@@ -74,21 +108,21 @@ chunk    {1} user.js (user) 189 bytes [entry] [rendered]
 ```
 Hash: 0a1b2c3d4e5f6a7b8c9d
 Version: webpack 4.27.1
-   Asset       Size  Chunks             Chunk Names
-index.js  994 bytes       0  [emitted]  index
- user.js   1.08 KiB       1  [emitted]  user
-Entrypoint index = index.js
-Entrypoint user = user.js
-chunk    {0} index.js (index) 74 bytes [entry] [rendered]
-    > ./index index
- [0] ./index.js 74 bytes {0} [built]
-     single entry ./index  index
-chunk    {1} user.js (user) 189 bytes [entry] [rendered]
-    > user
- [1] multi ./user ./account 40 bytes {1} [built]
-     multi entry 
- [2] ./user.js 73 bytes {1} [built]
-     single entry ./user [1] multi ./user ./account user[0]
- [3] ./account.js 76 bytes {1} [built]
-     single entry ./account [1] multi ./user ./account user[1]
+      Asset      Size  Chunks             Chunk Names
+    main.js  7.28 KiB       0  [emitted]  main
+webpack.png   145 KiB          [emitted]  
+Entrypoint main = main.js
+chunk    {0} main.js (main) 17.6 KiB [entry] [rendered]
+    > . main
+ [0] ./index.js 440 bytes {0} [built]
+     [exports: default]
+     single entry .  main
+ [1] ./index.scss 1.22 KiB {0} [built]
+     [no exports used]
+     harmony side effect evaluation ./index.scss [0] ./index.js 1:0-22
+ [2] (webpack)/node_modules/css-loader/dist/cjs.js!(webpack)/node_modules/sass-loader/lib/loader.js!./index.scss 403 bytes {0} [built]
+     cjs require !!../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/lib/loader.js!./index.scss [1] ./index.scss 2:14-132
+ [6] (webpack)/assets/webpack.png 57 bytes {0} [built]
+     cjs require ../../../assets/webpack.png [0] ./index.js 3:0-38
+     + 3 hidden modules
 ```

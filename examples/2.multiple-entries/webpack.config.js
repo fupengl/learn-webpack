@@ -4,7 +4,7 @@ module.exports = {
   // mode: "development" || "production",
   context: path.join(__dirname, "src"),
   entry: {
-    index: "./index",
+    index: ".",
     user: ["./user", "./account"]
   },
   output: {
