@@ -1,8 +1,5 @@
-/*
-	MIT License http://www.opensource.org/licenses/mit-license.php
-	Author Tobias Koppers @sokra
-*/
 "use strict";
+
 const fs = require("fs");
 const path = require("path");
 
