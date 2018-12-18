@@ -47,4 +47,7 @@
 * [Example 3: Common Chunk](https://github.com/fupengl/learn-webpack/tree/master/examples/6.common-chunk)
 
 ### 文档链接
-* [掘金 webpack plugin](https://juejin.im/entry/5a4cb7906fb9a04500037399)
+* [segmentfault webpak](https://segmentfault.com/a/1190000006178770?utm_source=tag-newest)
+* [splitChunk](https://juejin.im/post/5af1677c6fb9a07ab508dabb)
+* [webpack plugin](https://juejin.im/entry/5a4cb7906fb9a04500037399)
+* [webpack 流程](http://taobaofed.org/blog/2016/09/09/webpack-flow/)
