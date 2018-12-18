@@ -56,7 +56,7 @@
 /******/ 	// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 	// Promise = chunk loading, 0 = chunk loaded
 /******/ 	var installedChunks = {
-/******/ 		"pageC": 0
+/******/ 		5: 0
 /******/ 	};
 /******/
 /******/ 	var deferredModules = [];
@@ -136,7 +136,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "dist/";
 /******/
 /******/ 	var jsonpArray = window["webpackJsonp"] = window["webpackJsonp"] || [];
 /******/ 	var oldJsonpFunction = jsonpArray.push.bind(jsonpArray);
@@ -147,21 +147,24 @@
 /******/
 /******/
 /******/ 	// add entry module to deferred list
-/******/ 	deferredModules.push(["./pageC.js","commons~pageA~pageB~pageC","commons~pageB~pageC"]);
+/******/ 	deferredModules.push([7,2,4]);
 /******/ 	// run deferred modules when ready
 /******/ 	return checkDeferredModules();
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./pageC.js":
+/***/ 7:
 /*!******************!*\
   !*** ./pageC.js ***!
   \******************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("var utility2 = __webpack_require__(/*! ./utility2 */ \"./utility2.js\");\nvar utility3 = __webpack_require__(/*! ./utility3 */ \"./utility3.js\");\n\nmodule.exports = \"pageC\";\n\n//# sourceURL=webpack:///./pageC.js?");
+var utility2 = __webpack_require__(/*! ./utility2 */ 3);
+var utility3 = __webpack_require__(/*! ./utility3 */ 6);
+
+module.exports = "pageC";
 
 /***/ })
 

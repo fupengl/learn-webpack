@@ -56,7 +56,7 @@
 /******/ 	// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 	// Promise = chunk loading, 0 = chunk loaded
 /******/ 	var installedChunks = {
-/******/ 		"pageA": 0
+/******/ 		0: 0
 /******/ 	};
 /******/
 /******/ 	var deferredModules = [];
@@ -136,7 +136,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "dist/";
 /******/
 /******/ 	var jsonpArray = window["webpackJsonp"] = window["webpackJsonp"] || [];
 /******/ 	var oldJsonpFunction = jsonpArray.push.bind(jsonpArray);
@@ -147,33 +147,36 @@
 /******/
 /******/
 /******/ 	// add entry module to deferred list
-/******/ 	deferredModules.push(["./pageA.js","vendor","commons~pageA~pageB~pageC"]);
+/******/ 	deferredModules.push([0,1,2]);
 /******/ 	// run deferred modules when ready
 /******/ 	return checkDeferredModules();
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ "./pageA.js":
+/******/ ([
+/* 0 */
 /*!******************!*\
   !*** ./pageA.js ***!
   \******************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("var vendor1 = __webpack_require__(/*! vendor1 */ \"./node_modules/vendor1.js\");\nvar utility1 = __webpack_require__(/*! ./utility1 */ \"./utility1.js\");\nvar utility2 = __webpack_require__(/*! ./utility2 */ \"./utility2.js\");\n\nmodule.exports = \"pageA\";\n\n\n//# sourceURL=webpack:///./pageA.js?");
+var vendor1 = __webpack_require__(/*! vendor1 */ 1);
+var utility1 = __webpack_require__(/*! ./utility1 */ 2);
+var utility2 = __webpack_require__(/*! ./utility2 */ 3);
+
+module.exports = "pageA";
+
 
 /***/ }),
-
-/***/ "./utility1.js":
+/* 1 */,
+/* 2 */
 /*!*********************!*\
   !*** ./utility1.js ***!
   \*********************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports = \"utility1\";\n\n//# sourceURL=webpack:///./utility1.js?");
+module.exports = "utility1";
 
 /***/ })
-
-/******/ });
+/******/ ]);

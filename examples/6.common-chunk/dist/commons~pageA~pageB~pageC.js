@@ -1,13 +1,13 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["commons~pageA~pageB~pageC"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[2],{
 
-/***/ "./utility2.js":
+/***/ 3:
 /*!*********************!*\
   !*** ./utility2.js ***!
   \*********************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports = \"utility2\";\n\n//# sourceURL=webpack:///./utility2.js?");
+module.exports = "utility2";
 
 /***/ })
 

@@ -1,6 +1,4 @@
-This example shows how to create an explicit vendor chunk as well as a common chunk for code shared among entry points. In this example, we have 3 entry points: `pageA`, `pageB`, and `pageC`. Those entry points share some of the same utility modules, but not others. This configuration will pull out any modules common to at least 2 bundles and place it in the `common` bundle instead, all while keeping the specified vendor libraries in their own bundle by themselves.
-
-To better understand, here are the entry points and which utility modules they depend on:
+此示例显示如何创建显式供应商块以及入口点之间共享的代码的公共块。在这个例子中，我们有3个入口点：`pageA`，`pageB`，和`pageC`。这些入口点共享一些相同的实用程序模块，但不共享其他模块。此配置将提取至少2个bundle common共有的任何模块，并将其放入bundle中，同时将指定的供应商库保留在自己的bundle中
 
 - `pageA`
   - `utility1`
@@ -12,7 +10,7 @@ To better understand, here are the entry points and which utility modules they d
   - `utility2`
   - `utility3`
 
-Given this configuration, webpack will produce the following bundles:
+webpack bundles:
 
 - `vendor`
   - webpack runtime
@@ -28,8 +26,6 @@ Given this configuration, webpack will produce the following bundles:
   - `pageB`
 - `pageC`
   - `pageC`
-
-With this bundle configuration, you would load your third party libraries, then your common application code, then your page-specific application code.
 
 # webpack.config.js
 
