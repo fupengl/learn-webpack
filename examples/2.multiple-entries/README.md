@@ -35,7 +35,7 @@ module.exports = {
     user: ["./user", "./account"]
   },
   output: {
-    path: path.join(__dirname, "dist"),
+    path: path.join(__dirname, "test"),
     filename: "[name].js"
   }
 };

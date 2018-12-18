@@ -44,4 +44,7 @@
 * [Example 3: Loader](https://github.com/fupengl/learn-webpack/tree/master/examples/3.loader)
 * [Example 4: Plugin](https://github.com/fupengl/learn-webpack/tree/master/examples/4.plugin)
 * [Example 3: Dev Server](https://github.com/fupengl/learn-webpack/tree/master/examples/5.dev-server)
-* [Example 3: Common](https://github.com/fupengl/learn-webpack/tree/master/examples/6.common)
+* [Example 3: Common Chunk](https://github.com/fupengl/learn-webpack/tree/master/examples/6.common-chunk)
+
+### 文档链接
+* [掘金 webpack plugin](https://juejin.im/entry/5a4cb7906fb9a04500037399)

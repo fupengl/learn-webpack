@@ -38,6 +38,5 @@ Thumbs.db
 
 # customize
 node_modules/
-dist/
 .idea/
 .vscode/
